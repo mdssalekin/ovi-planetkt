@@ -91,14 +91,10 @@ const Footer = () => {
             <div className="flex flex-col gap-4 text-center md:text-start">
               <p className="pb-2 text-lg font-medium">Contact Us</p>
               <div className="flex flex-col gap-2">
-                <p>2rd floor(Lift 3), Venus Complex, Kha -199/2-4 Progati Saroni, Middle Badda, Dhaka-1212</p>
+                <p>Venus Complex(Lift-3), Kha-199/3-4, Bir Uttam Rafiqul Islam Ave, Dhaka-1212</p>
                 <p>contact.planetkt@gmail.com</p>
                 <p>01885377744</p>
               </div>
-              <a href="#" className="flex items-center gap-2 underline">
-                <img src="/images/footer/V2/location.svg" alt="Location" className="w-5 h-5" />
-                View Map
-              </a>
             </div>
           </div>
         </div>
