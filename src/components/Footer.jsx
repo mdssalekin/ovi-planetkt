@@ -1,233 +1,154 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from "react";
+import PayLogo from './assets/pay.svg';
+import gaviLogo from './assets/logo 2.png';
 
 const Footer = () => {
-    return (
-        <footer className="bg-slate-400">
-            <div
-                className="mx-auto max-w-screen-xl space-y-8 px-4 py-16 sm:px-6 lg:space-y-16 lg:px-8"
-            >
-                <div className="sm:flex sm:items-center sm:justify-between">
-                    <div >
-                        <Link to={'/home'}>
-                            <h2 className="font-blach sm:text-xl text-sm text-left hover:bg-transparent uppercase text-brand-blue tracking-tighter w-full font-oswald font-bold flex items-center justify-start">
-                                <img className='w-8 h-8' src="https://img.icons8.com/sf-black-filled/64/313a67/home.png" alt="logo" />
-                                <span>Property Sale</span>
-                            </h2>
-                        </Link>
-                    </div>
+  return (
+    <div className="w-full bg-brand-16 text-sm" id="footer">
+      {/* Top Section */}
+      <div className="h-fit px-5 md:px-0">
+        <div className="container grid grid-cols-1 gap-7 py-20 md:grid-cols-2 lg:grid-cols-4">
 
-                    <ul className="mt-8 flex justify-start gap-6 sm:mt-0 sm:justify-end">
-                        <li>
-                            <Link to={"https://www.facebook.com/RMBestProperties/"} target='_blank'
-                                className="text-brand-blue duration-300 hover:text-white font-heading"
-                            >
-                                <span className="sr-only">Facebook</span>
+          {/* 1️⃣ Logo & Company Info */}
+          <div className="w-full text-brand-3">
+            <div className="flex flex-col gap-4 text-center md:text-start">
+              <div className="flex items-baseline justify-center md:justify-start">
+                <img
+                  src={gaviLogo}
+                  style={{ height: 256, width: 256,}}
+                  alt="logo"
+                  className="h-12 w-[110px] cursor-pointer"
+                />
+              </div>
+              <p>Let us be your trusted travel companion every step of the way.</p>
 
-                                <svg
-                                    className="h-6 w-6"
-                                    fill="currentColor"
-                                    viewBox="0 0 24 24"
-                                    aria-hidden="true"
-                                >
-                                    <path
-                                        fillRule="evenodd"
-                                        d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
-                                        clipRule="evenodd"
-                                    />
-                                </svg>
-                            </Link>
-                        </li>
-
-                        <li>
-                            <Link to={""} target='_blank'
-                                className="text-brand-blue duration-300 hover:text-white font-heading"
-                            >
-                                <span className="sr-only">Instagram</span>
-
-                                <svg
-                                    className="h-6 w-6"
-                                    fill="currentColor"
-                                    viewBox="0 0 24 24"
-                                    aria-hidden="true"
-                                >
-                                    <path
-                                        fillRule="evenodd"
-                                        d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"
-                                        clipRule="evenodd"
-                                    />
-                                </svg>
-                            </Link>
-                        </li>
-
-                        <li>
-                            <Link
-                                className="text-brand-blue duration-300 hover:text-white font-heading"
-                            >
-                                <span className="sr-only">Twitter</span>
-
-                                <svg
-                                    className="h-6 w-6"
-                                    fill="currentColor"
-                                    viewBox="0 0 24 24"
-                                    aria-hidden="true"
-                                >
-                                    <path
-                                        d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"
-                                    />
-                                </svg>
-                            </Link>
-                        </li>
-
-                        
-
-                        <li>
-                            <Link
-                                className="text-brand-blue duration-300 hover:text-white font-heading"
-                            >
-                                <span className="sr-only">Dribbble</span>
-
-                                <svg
-                                    className="h-6 w-6"
-                                    fill="currentColor"
-                                    viewBox="0 0 24 24"
-                                    aria-hidden="true"
-                                >
-                                    <path
-                                        fillRule="evenodd"
-                                        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10c5.51 0 10-4.48 10-10S17.51 2 12 2zm6.605 4.61a8.502 8.502 0 011.93 5.314c-.281-.054-3.101-.629-5.943-.271-.065-.141-.12-.293-.184-.445a25.416 25.416 0 00-.564-1.236c3.145-1.28 4.577-3.124 4.761-3.362zM12 3.475c2.17 0 4.154.813 5.662 2.148-.152.216-1.443 1.941-4.48 3.08-1.399-2.57-2.95-4.675-3.189-5A8.687 8.687 0 0112 3.475zm-3.633.803a53.896 53.896 0 013.167 4.935c-3.992 1.063-7.517 1.04-7.896 1.04a8.581 8.581 0 014.729-5.975zM3.453 12.01v-.26c.37.01 4.512.065 8.775-1.215.25.477.477.965.694 1.453-.109.033-.228.065-.336.098-4.404 1.42-6.747 5.303-6.942 5.629a8.522 8.522 0 01-2.19-5.705zM12 20.547a8.482 8.482 0 01-5.239-1.8c.152-.315 1.888-3.656 6.703-5.337.022-.01.033-.01.054-.022a35.318 35.318 0 011.823 6.475 8.4 8.4 0 01-3.341.684zm4.761-1.465c-.086-.52-.542-3.015-1.659-6.084 2.679-.423 5.022.271 5.314.369a8.468 8.468 0 01-3.655 5.715z"
-                                        clipRule="evenodd"
-                                    />
-                                </svg>
-                            </Link>
-                        </li>
-                    </ul>
-                </div>
-
-                <div
-                    className="grid grid-cols-1 gap-8 border-t-2 border-brand-blue pt-8 sm:grid-cols-2 lg:grid-cols-4 lg:pt-16 font-oswald"
+              {/* 2️⃣ Social Media Links */}
+              <div className="flex items-baseline justify-center gap-2 md:justify-start">
+                <a href="https://www.facebook.com/firsttripbd" target="_blank" className="flex h-10 w-10 items-center justify-center overflow-hidden rounded-full bg-black/[16%] hover:bg-brand-1">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-7 w-7"
+                    fill="currentColor"
+                    style={{ color: "#1877f2" }}
+                    viewBox="0 0 24 24"
+                    >
+                        <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z" />
+                    </svg>
+                </a>
+                <a href="https://x.com/FirstTripBD" target="_blank" className="flex h-10 w-10 items-center justify-center overflow-hidden rounded-full bg-black/[16%] hover:bg-brand-1">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-5 w-5"
+                    fill="currentColor"
+                    style={{ color: "#060606ff" }}
+                    viewBox="0 0 24 24"
                 >
-                    <div>
-                        <p className="font-bold uppercase font-oswald text-brand-blue">Services</p>
-
-                        <ul className="mt-6 space-y-4 text-sm">
-                            <li>
-                                <Link className="text-brand-blue duration-300 hover:text-white font-heading">
-                                    1on1 Coaching
-                                </Link>
-                            </li>
-
-                            <li>
-                                <Link className="text-brand-blue duration-300 hover:text-white font-heading">
-                                    Company Review
-                                </Link>
-                            </li>
-
-                            <li>
-                                <Link className="text-brand-blue duration-300 hover:text-white font-heading">
-                                    Accounts Review
-                                </Link>
-                            </li>
-
-                            <li>
-                                <Link className="text-brand-blue duration-300 hover:text-white font-heading">
-                                    HR Consulting
-                                </Link>
-                            </li>
-
-                            <li>
-                                <Link className="text-brand-blue duration-300 hover:text-white font-heading">
-                                    SEO Optimisation
-                                </Link>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div>
-                        <p className="font-bold uppercase font-oswald text-brand-blue">Company</p>
-
-                        <ul className="mt-6 space-y-4 text-sm">
-                            <li>
-                                <Link className="text-brand-blue duration-300 hover:text-white font-heading">
-                                    About
-                                </Link>
-                            </li>
-
-                            <li>
-                                <Link className="text-brand-blue duration-300 hover:text-white font-heading">
-                                    Meet the Team
-                                </Link>
-                            </li>
-
-                            <li>
-                                <Link className="text-brand-blue duration-300 hover:text-white font-heading">
-                                    Accounts Review
-                                </Link>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div>
-                        <p className="font-bold uppercase font-oswald text-brand-blue">Helpful Links</p>
-
-                        <ul className="mt-6 space-y-4 text-sm">
-                            <li>
-                                <Link className="text-brand-blue duration-300 hover:text-white font-heading">
-                                    Contact
-                                </Link>
-                            </li>
-
-                            <li>
-                                <Link className="text-brand-blue duration-300 hover:text-white font-heading">
-                                    FAQs
-                                </Link>
-                            </li>
-
-                            <li>
-                                <Link className="text-brand-blue duration-300 hover:text-white font-heading">
-                                    Live Chat
-                                </Link>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div>
-                        <p className="font-bold uppercase font-oswald text-brand-blue">Legal</p>
-
-                        <ul className="mt-6 space-y-4 text-sm">
-                            <li>
-                                <Link className="text-brand-blue duration-300 hover:text-white font-heading">
-                                    Accessibility
-                                </Link>
-                            </li>
-
-                            <li>
-                                <Link className="text-brand-blue duration-300 hover:text-white font-heading">
-                                    Returns Policy
-                                </Link>
-                            </li>
-
-                            <li>
-                                <Link className="text-brand-blue duration-300 hover:text-white font-heading">
-                                    Refund Policy
-                                </Link>
-                            </li>
-
-                            <li>
-                                <Link className="text-brand-blue duration-300 hover:text-white font-heading">
-                                    Hiring Statistics
-                                </Link>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-                <p className="text-xs text-brand-blue font-heading">
-                    &copy; 2023. RM Best Property Ltd. All rights reserved.
-                </p>
+                    <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
+                </svg>
+                </a>
+                <a href="https://www.instagram.com/firsttrip_ltd/" target="_blank" className="flex h-10 w-10 items-center justify-center overflow-hidden rounded-full bg-black/[16%] hover:bg-brand-1">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-5 w-5"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                    >
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                    </svg>
+                </a>
+                <a href="https://www.linkedin.com/company/first-trip-limited" target="_blank" className="flex h-10 w-10 items-center justify-center overflow-hidden rounded-full bg-black/[16%] hover:bg-brand-1">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-5 w-5"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                    >
+                        <path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z" />
+                    </svg>
+                </a>
+                <a href="https://www.youtube.com/@Firsttripltd" target="_blank" className="flex h-10 w-10 items-center justify-center overflow-hidden rounded-full bg-black/[16%] hover:bg-red-200">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-5 w-5"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                >
+                    <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z" />
+                </svg>
+                </a>
+              </div>
             </div>
-        </footer>
-    )
-}
+          </div>
 
-export default Footer
+          {/* 3️⃣ Explore Links */}
+          <div className="w-full text-black">
+            <div className="flex flex-col gap-4 text-center md:text-start">
+              <p className="pb-2 text-lg font-medium">Explore</p>
+              <div className="flex flex-col md:flex-col gap-1">
+                <a href="/flight" className="hover:text-orange-400">Flight</a>
+                <a href="/hotel" className="hover:text-orange-400">Hotel</a>
+                <a href="/holiday" className="hover:text-orange-400">Holiday</a>
+                <a href="/visa" className="hover:text-orange-400">Visa</a>
+                <a href="https://blog.firsttrip.com/" target="_blank" className="hover:text-orange-400">Travel Guide</a>
+              </div>
+            </div>
+          </div>
+
+          {/* 4️⃣ Useful Links */}
+          <div className="w-full text-black">
+            <div className="flex flex-col gap-4 text-center md:text-start">
+              <p className="pb-2 text-lg font-medium">Useful Links</p>
+              <div className="flex flex-col gap-1">
+                <a href="/about-us" className="hover:text-orange-400">About Us</a>
+                <a href="/about-us?id=contact_us" className="hover:text-orange-400">Contact Us</a>
+                <a href="/visa" className="hover:text-orange-400">Visa Guide & Application</a>
+                <a href="/terms-conditions" className="hover:text-orange-400">Terms & Conditions</a>
+                <a href="/privacy-policy" className="hover:text-orange-400">Privacy Policy</a>
+              </div>
+            </div>
+          </div>
+
+          {/* 5️⃣ Contact Info */}
+          <div className="w-full text-brand-3">
+            <div className="flex flex-col gap-4 text-center md:text-start">
+              <p className="pb-2 text-lg font-medium">Contact Us</p>
+              <div className="flex flex-col gap-2">
+                <p>3rd floor, Sharif Plaza, 39 Kemal Ataturk Avenue, Banani, Dhaka-1213</p>
+                <p>ask@firsttrip.com</p>
+                <p>09613131415</p>
+              </div>
+              <a href="#" className="flex items-center gap-2 underline">
+                <img src="/images/footer/V2/location.svg" alt="Location" className="w-5 h-5" />
+                View Map
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* 6️⃣ Certification / Badges */}
+      <div className="rounded-lg bg-brand-17 p-2 md:rounded-none">
+        <div className="container flex flex-col items-center justify-between gap-5 text-sm text-brand-3 md:flex-row">
+          {/* 7️⃣ Payment Method */}
+          <div className="flex flex-col items-start gap-2 mt-4 md:mt-0">
+            <p className="text-lg font-medium">Payment Method</p>
+            <img src={PayLogo} alt="Payment Method" className="w-[384px] h-auto md:h-7" />
+          </div>
+        </div>
+      </div>
+
+      {/* 8️⃣ Bottom Bar */}
+      <div className="container flex flex-col items-center gap-5 pb-20 pt-10 text-sm text-brand-3 md:flex-row md:justify-between md:gap-10 md:pb-0 md:pt-0">
+        <div className="flex basis-1/2 items-center">
+          <p>© 2026 <span className="font-bold text-brand-1">PlaneTkt.com</span> All Rights Reserved</p>
+        </div>
+        <div className="flex basis-1/2 flex-wrap items-center justify-center gap-6 md:justify-end">
+          <a href="/emi-policy" target="_blank">EMI Policy</a>
+          <a href="/faq" target="_blank">FAQ’s</a>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Footer;

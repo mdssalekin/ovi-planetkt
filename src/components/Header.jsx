@@ -1,142 +1,178 @@
-import { React, useState } from 'react'
-import { BsJustifyRight, BsMessenger, BsSearch } from 'react-icons/bs'
-import { Link, useNavigate } from 'react-router-dom'
-import MobileMenu from './mobileMenu'
-import { useDispatch, useSelector } from 'react-redux'
-import Profile from './ProfileOption'
-import { setSearchTermState } from '../redux/search/searchSlice'
-import { MdOutlineClose } from "react-icons/md";
-import { FaHome } from "react-icons/fa";
-import logo from './assets/logo.png';
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import logo from "./assets/logo.png";
+import { useNavigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import {
+  FaPlane,
+  FaHotel,
+  FaUmbrellaBeach,
+  FaPassport,
+  FaSimCard,
+  FaTags,
+  FaUsers,
+} from "react-icons/fa";
+
+const menuItems = [
+  { label: "Flight", path: "/flight", icon: FaPlane },
+  { label: "Hotel", path: "/hotel", icon: FaHotel },
+  { label: "Holiday", path: "/holiday", icon: FaUmbrellaBeach },
+  { label: "Visa", path: "/visa", icon: FaPassport },
+  { label: "eSIM", path: "/esim", icon: FaSimCard },
+  { label: "Promotions", path: "/promotions", icon: FaTags },
+  { label: "About", path: "/about", icon: FaUsers },
+];
 
 const Header = () => {
-    const [isActiveMoblie, setisActiveMoblie] = useState(false)
-    const { currentUser } = useSelector((state) => state.user)
-    const { notificationsDB } = useSelector(state => state.notification)
-    const [searchValue, setSearchValue] = useState("")
-    const navigate = useNavigate()
-    const dispatch = useDispatch()
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const navigate = useNavigate();
 
+  return (
+    <>
+      <div className="sticky top-0 z-50 shadow-md" style={{backgroundColor: "#290961"}}>
+        <div className="h-14 md:h-20 w-full">
+          <div className="container mx-auto h-full px-4">
+            <div className="flex h-full items-center justify-between">
+              <div className="flex items-center gap-2">
+                <button
+                  className="md:hidden p-2 text-gray-700"
+                  onClick={() => setMobileOpen(true)}
+                  aria-label="Open menu"
+                >
+                  <svg
+                    className="h-7 w-7"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth={2}
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M4 6h16M4 12h16M4 18h16"
+                    />
+                  </svg>
+                </button>
 
-    const handleSubmit = (e) => {
-        e.preventDefault()
-        navigate(`/search`)
-        setSearchValue("")
-    }
+                <img
+                  src={logo}
+                  style={{ height: 200, width: 150}}
+                  alt="logo"
+                  onClick={() => navigate("/")}
+                  className="h-10 md:h-12 object-contain cursor-pointer"
+                />
+              </div>
+              <div className="hidden md:flex items-center gap-8">
+                    {menuItems.map((item) => {
+                        const Icon = item.icon;
 
-
-    return (
-        <>
-            <div className="navbar pl-0 pr-0 pt-3 pb-3 bg-slate-300 shadow-md">
-
-                <div className="px-5  max-w-screen-2xl w-full !mx-auto grid grid-cols-8 gap-1 ">
-                    {/* Logo container  */}
-                    <div className="col-span-3 sm:col-span-4">
-
-                        <h1 className="font-blach sm:text-xl text-sm text-left hover:bg-transparent uppercase text-brand-blue tracking-tighter w-full font-heading font-bold flex items-center justify-start">
-                            <Link to={'/home'} className='flex items-center justify-start'>
-                                <img className='w-10 h-10' src={logo} alt="logo" />
-                                <span className='hidden sm:block'>RM Best Properties</span>
-                            </Link>
-                        </h1>
-
-                    </div>
-
-                    {/* search Form  */}
-                    {/* <div className="col-span-6 sm:col-span-3  md:col-span-4">
-                        <form onSubmit={handleSubmit}>
-                            <div className="form-control w-full max-w-full   sm:max-w-sm  flex flex-row mx-auto items-center justify-center relative">
-                                <input
-                                    type="text"
-                                    placeholder="Explore by area, amenities, or keyword..."
-                                    className="search placeholder:text-gray-700"
-                                    onChange={(e) => {
-                                        dispatch(setSearchTermState(e.target.value)),
-                                            setSearchValue(e.target.value)
-                                    }}
-                                    value={searchValue}
-                                />
-                                <button type='submit' className='search_btn bg-brand-blue'>
-                                    <i className='text-center text-white font-bold'><BsSearch /></i>
-                                </button>
-                            </div>
-                        </form>
-                    </div> */}
-
-                    {/*========= when user login ======== */}
-                    <div className="col-span-3 sm:col-span-5  md:col-span-4 flex items-center justify-end">
-                        <ul className="hidden sm:ml-5 sm:flex items-center justify-end  pr-4 font-semibold text-brand-blue font-content ">
-                            <li className='mr-9 capitalize text-xl text-brand-blue'>
-                                <Link to='/home'>
-                                    <FaHome />
-                                </Link>
-                            </li>
-
-                            <li className='mr-9 capitalize text-lg text-brand-blue  '>
-                                <Link to={`${currentUser ? "/message" : "/login"}`}>
-                                    <span className='relative'>
-                                        <BsMessenger className='z-10' />
-                                        {
-                                            notificationsDB.length === 0
-                                                ?
-                                                <p className={`text-xs px-[2px] font-heading font-medium bg-lime-600 text-white absolute  top-[-13px] right-[-14px]  flex items-center justify-center rounded-sm`}>new</p>
-                                                :
-                                                <p className={`text-[11px] font-content font-medium bg-[#c00] text-white absolute  top-[-10px] h-4 ${notificationsDB.length < 9 ? "w-3 right-[-8px]" : "w-4 right-[-10px]"} flex items-center justify-center rounded-sm`}>{notificationsDB.length}</p>
-                                        }
-                                    </span>
-                                   
-                                </Link>
-                            </li>
-                            {
-                                currentUser ?
-                                    <Profile user={currentUser} />
-                                    :
-                                    <li className='mr-6'>
-                                        <Link to='/login' className=' text-white px-5 font-bold font-headi py-2 rounded uppercase bg-brand-blue text-sm hover:bg-white hover:text-brand-blue duration-300 hover:shadow-sm'>
-                                            Login
-                                        </Link>
-                                    </li>
-                            }
-
-                        </ul>
-
-                        <div className="nav_mobile flex items-center justify-center sm:hidden gap-1">
-                            {/* User Profile Image  */}
-                            {/* {currentUser && <Profile user={currentUser} />} */}
-
-                            <Link to={`${currentUser ? "/message" : "/login"}`} className='mr-1 text-lg  text-brand-blue'>
-                                <span className='relative'>
-                                    <BsMessenger className='z-10' />
-                                    {
-                                        notificationsDB.length === 0
-                                            ?
-                                            <p className={`text-xs px-[2px] font-heading font-normal bg-lime-600 text-white absolute  top-[-13px] right-[-9px]  flex items-center justify-center rounded-sm`}>new</p>
-                                            :
-                                            <p className={`text-[11px] font-content font-medium bg-[#c00] text-white absolute  top-[-10px] h-4 ${notificationsDB.length < 9 ? "w-3 right-[-8px]" : "w-4 right-[-10px]"} flex items-center justify-center rounded-sm`}>{notificationsDB.length}</p>
-                                    }
-                                </span>
-                            </Link>
-
-                            <button
-                                className="btn btn-ghost p-1 hover:bg-transparent text-lg"
-                                onClick={() => setisActiveMoblie(!isActiveMoblie)}
+                        return (
+                            <NavLink
+                            key={item.label}
+                            to={item.path}
+                            end
+                            className="group flex flex-col items-center gap-1"
                             >
-                                {
-                                    isActiveMoblie ? <MdOutlineClose className='text-red-600 font-bold' /> : <BsJustifyRight className='text-brand-blue' />
-                                }
+                            {({ isActive }) => (
+                                <>
+                                <Icon className="text-xl text-white group-hover:text-white transition" />
 
-                            </button>
-                        </div>
+                                <span className="text-sm font-medium text-white group-hover:text-white transition">
+                                    {item.label}
+                                </span>
 
-                    </div>
+                                <div
+                                    className={`
+                                    h-[2px] bg-red-500 transition-all duration-300
+                                    w-0 group-hover:w-full
+                                    ${isActive ? "w-full" : ""}
+                                    `}
+                                />
+                                </>
+                            )}
+                            </NavLink>
+                        );
+                    })}
+                    
+              </div>
+              <div className="flex items-center gap-2">
+                <Link to="/signin">
+                    <button
+                    className="
+                        h-10 w-20 md:w-24 rounded-full 
+                        bg-red-500 text-white font-semibold
+                        focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2
+                        active:scale-95 transition
+                    "
+                    >
+                    Sign In
+                    </button>
+                </Link>
+
+                <Link to="/signup">
+                    <button
+                    className="
+                        h-10 w-20 md:w-24 rounded-full 
+                        border border-red-500 text-red-500 font-semibold
+                        focus:outline-none focus:ring-2 focus:ring-brand-1 focus:ring-offset-2
+                        active:scale-95 transition
+                    "
+                    >
+                    Sign Up
+                    </button>
+                </Link>
                 </div>
             </div>
-            {
-                isActiveMoblie && <MobileMenu menuStatus={{ isActiveMoblie, setisActiveMoblie }} />
-            }
-        </>
+          </div>
+        </div>
+      </div>
 
-    )
-}
+      {mobileOpen && (
+        <div
+          className="fixed inset-0 z-40 bg-black bg-opacity-50"
+          onClick={() => setMobileOpen(false)}
+        />
+      )}
 
-export default Header
+      <div
+        className={`fixed top-0 left-0 z-50 h-full w-64 bg-white shadow-lg transform transition-transform duration-300 ${
+          mobileOpen ? "translate-x-0" : "-translate-x-full"
+        }`}
+      >
+        <div className="p-4">
+          <div className="flex items-center justify-between mb-4">
+            <img src={logo} alt="logo" className="h-10 object-contain" />
+            <button
+              onClick={() => setMobileOpen(false)}
+              className="text-red-600 text-xl font-bold"
+            >
+              ✕
+            </button>
+          </div>
+
+          <div className="space-y-2">
+            {[
+              "Flight",
+              "Hotel",
+              "Holiday",
+              "Visa",
+              "eSIM",
+              "Promotions",
+              "Business Class",
+              "FT Club",
+            ].map((item) => (
+              <div
+                key={item}
+                className="rounded-lg p-2 text-sm font-medium cursor-pointer hover:bg-gray-100"
+              >
+                {item}
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default Header;
