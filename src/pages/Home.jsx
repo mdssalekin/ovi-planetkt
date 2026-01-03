@@ -40,7 +40,7 @@ export default function Home() {
   
   return (
     <div className="relative min-h-[308px] flex flex-col items-center justify-center lg:flex">
-      <div className="absolute top-0 z-0 mt-0 min-h-[310px] w-full border-t border-gray-300/50 bg-gradient-to-b from-green-100 to-green-700"></div>
+      <div className="absolute top-0 z-0 mt-0 min-h-[310px] w-full border-t border-gray-300/50 bg-gradient-to-b from-black-100 to-black-700"></div>
 
       <div className="absolute top-0 hidden md:block h-[308px] w-full -z-1">
         <video autoPlay loop muted playsInline className="h-full w-full object-cover">
