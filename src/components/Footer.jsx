@@ -68,7 +68,6 @@ const Footer = () => {
                 <a href="/hotel" className="hover:text-orange-400">Hotel</a>
                 <a href="/holiday" className="hover:text-orange-400">Holiday</a>
                 <a href="/visa" className="hover:text-orange-400">Visa</a>
-                <a href="https://blog.firsttrip.com/" target="_blank" className="hover:text-orange-400">Travel Guide</a>
               </div>
             </div>
           </div>
