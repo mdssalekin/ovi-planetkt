@@ -53,7 +53,6 @@ export default function Home() {
             Travel Smart, Travel Better. Travel with PlaneTkt.com
           </h1>
           <p className="text-sm md:text-md font-semibold text-white mt-2">
-            Flight, Hotel, Holiday, Visa & eSIM at your fingertips
           </p>
         </div>
 
