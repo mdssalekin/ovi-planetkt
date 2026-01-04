@@ -17,7 +17,6 @@ const tabsData = [
   { label: "Hotel",  icon: FaHotel },
   { label: "Visa",  icon: FaPassport },
   { label: "Holiday", icon: FaUmbrellaBeach },
-
 ];
 
 export default function Home() {
@@ -42,19 +41,19 @@ export default function Home() {
     <div className="relative min-h-[308px] flex flex-col items-center justify-center lg:flex">
       <div className="absolute top-0 z-0 mt-0 min-h-[310px] w-full border-t border-gray-300/50 bg-gradient-to-b from-black-100 to-black-700"></div>
 
-      <div className="absolute top-0 hidden md:block h-[308px] w-full -z-1">
+      <div className="absolute top-0 md:block h-[308px] w-full -z-1">
         <video autoPlay loop muted playsInline className="h-full w-full object-cover">
           <source src={heroVideo} type="video/mp4" />
         </video>
       </div>
 
       <div className="relative z-10 flex flex-col items-center justify-center h-full w-full">
-        <div className="container text-center md:text-left my-12 px-4 md:px-0 hidden md:block">
+        <div className="container text-center md:text-left my-12 px-4 md:px-0">
           <h1 className="text-xl md:text-5xl font-bold text-white">
             Travel Smart, Travel Better. Travel with PlaneTkt.com
           </h1>
-          <p className="text-lg md:text-md font-semibold text-white mt-2">
-            {/* Flight, Hotel, Holiday, Visa & eSIM at your fingertips */}
+          <p className="text-sm md:text-md font-semibold text-white mt-2">
+            Flight, Hotel, Holiday, Visa & eSIM at your fingertips
           </p>
         </div>
 

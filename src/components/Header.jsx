@@ -35,7 +35,7 @@ const Header = () => {
             <div className="flex h-full items-center justify-between">
               <div className="flex items-center gap-2">
                 <button
-                  className="md:hidden p-2 text-gray-700"
+                  className="md:hidden p-2 text-gray-100"
                   onClick={() => setMobileOpen(true)}
                   aria-label="Open menu"
                 >
@@ -135,13 +135,13 @@ const Header = () => {
       )}
 
       <div
-        className={`fixed top-0 left-0 z-50 h-full w-64 bg-white shadow-lg transform transition-transform duration-300 ${
+        className={`fixed top-0 left-0 z-50 h-full w-64 shadow-lg transform transition-transform duration-300 ${
           mobileOpen ? "translate-x-0" : "-translate-x-full"
-        }`}
+        }`} style={{backgroundColor: '#290961'}}
       >
         <div className="p-4">
           <div className="flex items-center justify-between mb-4">
-            <img src={logo} alt="logo" className="h-10 object-contain" />
+            <img src={logo} alt="logo" className="h-10 object-contain" style={{width: 70, height: 70}} />
             <button
               onClick={() => setMobileOpen(false)}
               className="text-red-600 text-xl font-bold"
@@ -154,16 +154,14 @@ const Header = () => {
             {[
               "Flight",
               "Hotel",
-              "Holiday",
               "Visa",
+              "Holiday",
               "eSIM",
               "Promotions",
-              "Business Class",
-              "FT Club",
             ].map((item) => (
               <div
                 key={item}
-                className="rounded-lg p-2 text-sm font-medium cursor-pointer hover:bg-gray-100"
+                className="rounded-lg p-2 text-sm font-medium cursor-pointer hover:bg-gray-100 text-white hover:text-black"
               >
                 {item}
               </div>

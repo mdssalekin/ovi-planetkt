@@ -29,7 +29,7 @@ export default function FlightSearch() {
 
     return (
         <div className="mt-3 rounded-xl bg-white shadow-md p-6 w-full max-w-[960px]">
-            <div className="mt-1 flex gap-6 mb-5">
+            <div className="mt-[10px] md:mt-1 flex gap-6 mb-5">
                 {["One Way", "Round Way"].map((type) => (
                     <div
                     key={type}
