@@ -151,19 +151,13 @@ const Header = () => {
           </div>
 
           <div className="space-y-2">
-            {[
-              "Flight",
-              "Hotel",
-              "Visa",
-              "Holiday",
-              "eSIM",
-              "Promotions",
-            ].map((item) => (
+            {menuItems.map((item) => (
               <div
                 key={item}
+                onClick={() => navigate(item.path)}
                 className="rounded-lg p-2 text-sm font-medium cursor-pointer hover:bg-gray-100 text-white hover:text-black"
               >
-                {item}
+                {item.label}
               </div>
             ))}
           </div>

@@ -83,6 +83,8 @@ export default function Home() {
               })}
             </div>
           </div>
+
+          <div className="mt-16 w-full justify-center text-center text-red-500 text-2xl font-bold px-4 md:px-0" style={{color: "#EF4444"}}>More Updates are coming soon...</div>
       </div>
     </div>
   );
